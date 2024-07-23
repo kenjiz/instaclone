@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:env/env.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -67,7 +68,7 @@ class GoogleSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       onPressed: _signInWithGoogle,
-      icon: const Icon(Icons.auto_awesome),
+      icon: Assets.icons.google.svg(height: 24),
       label: Text('Google sign in', style: Theme.of(context).textTheme.headlineSmall),
     );
   }
