@@ -5,7 +5,7 @@
   "dictionaryDefinitions": [
     {
       "name": "vgv_allowed",
-      "path": "https://raw.githubusercontent.com/verygoodopensource/very_good_dictionaries/main/allowed.txt",
+      "path": "spelling/allowed.txt",
       "description": "Allowed VGV Spellings"
     },
     {
