@@ -7,13 +7,11 @@ environment:
   sdk: ^3.4.0
 
 dependencies:
-  api_repository:
-    path: "packages/api_repository"
   app_ui:
     path: "packages/app_ui"
-  auth_client:
-    path: "packages/auth_client/auth_client"
   bloc: ^8.1.4
+  database_client:
+    path: "packages/database_client"
   env:
     path: "packages/env"
   equatable: ^2.0.5
@@ -30,9 +28,15 @@ dependencies:
   intl: ^0.19.0
   powersync_repository:
     path: "packages/powersync_repository"
+  repository:
+    path: "packages/repository"
   shared:
     path: "packages/shared"
+  supabase_auth_client:
+    path: "packages/auth_client/supabase_auth_client"
   supabase_flutter: ^2.5.9
+  token_storage:
+    path: "packages/auth_client/token_storage"
 
 dev_dependencies:
   bloc_test: ^9.1.7

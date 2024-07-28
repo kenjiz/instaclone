@@ -1,10 +1,19 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:form_fields/form_fields.dart';
+import 'package:repository/repository.dart';
+import 'package:shared/shared.dart';
+import 'package:supabase_auth_client/supabase_auth_client.dart';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(const LoginState.initial());
+  LoginCubit(
+    this._userRepository,
+  ) : super(const LoginState.initial());
+
+  final UserRepository _userRepository;
 
   void changePasswordVisibility() {
     emit(state.copyWith(showPassword: !state.showPassword));
@@ -101,5 +110,24 @@ class LoginCubit extends Cubit<LoginState> {
       password: newPasswordState,
     );
     emit(newScreenState);
+  }
+
+  /// Formats error, that occurred during login process.
+  void _errorFormatter(Object e, StackTrace stackTrace) {
+    addError(e, stackTrace);
+    final status = switch (e) {
+      LogInWithPasswordFailure(:final AuthException error) => switch (error.statusCode?.parse) {
+          HttpStatus.badRequest => LogInSubmissionStatus.invalidCredentials,
+          _ => LogInSubmissionStatus.error,
+        },
+      LogInWithGoogleFailure => LogInSubmissionStatus.googleLogInFailure,
+      _ => LogInSubmissionStatus.idle,
+    };
+
+    final newState = state.copyWith(
+      status: status,
+      message: e.toString(),
+    );
+    emit(newState);
   }
 }

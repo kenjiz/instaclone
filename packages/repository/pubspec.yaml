@@ -9,8 +9,12 @@ environment:
 dependencies:
   auth_client:
     path: "../auth_client/auth_client"
+  database_client:
+    path: "../database_client"
+  powersync_repository:
+    path: "../powersync_repository"
+  rxdart: ^0.27.7
 
 dev_dependencies:
   mocktail: ^1.0.4
-  test: ^1.25.7
   very_good_analysis: ^6.0.0

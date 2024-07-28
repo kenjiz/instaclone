@@ -17,7 +17,7 @@ dependencies:
   powersync: ^1.2.2
   shared:
     path: "../shared"
-  supabase_flutter: ^2.3.4
+  supabase_flutter: ^2.5.9
 
 dev_dependencies:
   flutter_test:
