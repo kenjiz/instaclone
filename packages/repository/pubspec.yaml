@@ -1,10 +1,14 @@
-name: api_repository
-description: A fake api repository
+name: repository
+description: Instaclone repository
 version: 0.1.0+1
 publish_to: none
 
 environment:
   sdk: ^3.4.0
+
+dependencies:
+  auth_client:
+    path: "../auth_client/auth_client"
 
 dev_dependencies:
   mocktail: ^1.0.4

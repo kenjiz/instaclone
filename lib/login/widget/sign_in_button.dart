@@ -15,7 +15,7 @@ class SignInButton extends StatelessWidget {
       ),
     );
 
-    final isLoading = context.select<LoginCubit, bool>((cubit) => cubit.state.isLoading);
+    final isLoading = context.select<LoginCubit, bool>((cubit) => cubit.state.status.isLoading);
 
     final child = switch (isLoading) {
       true => AppButton.inProgress(style: style, scale: 0.5),
