@@ -11,6 +11,8 @@ dependencies:
     path: "packages/api_repository"
   app_ui:
     path: "packages/app_ui"
+  auth_client:
+    path: "packages/auth_client/auth_client"
   bloc: ^8.1.4
   env:
     path: "packages/env"

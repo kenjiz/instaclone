@@ -1,7 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:instaclone/l10n/l10n.dart';
-import 'package:instaclone/login/login.dart';
+import 'package:instaclone/login/view/login_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,15 +11,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: const AppTheme().theme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       darkTheme: const AppDarkTheme().theme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const SafeArea(
-        child: Scaffold(
-          body: LoginPage(),
-        ),
-      ),
+      home: const LoginPage(),
     );
   }
 }
