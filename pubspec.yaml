@@ -34,7 +34,7 @@ dependencies:
     path: "packages/shared"
   supabase_auth_client:
     path: "packages/auth_client/supabase_auth_client"
-  supabase_flutter: ^2.5.9
+  supabase_flutter: ^2.6.0
   token_storage:
     path: "packages/auth_client/token_storage"
 
